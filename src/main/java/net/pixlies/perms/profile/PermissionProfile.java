@@ -22,10 +22,12 @@ public class PermissionProfile {
     private Map<String, Boolean> individualPermissions;
     private List<String> permissionGroups;
 
+    // Save into Internal Database
     public void save() {
         instance.getInternalDatabase().getProfiles().put(java.util.UUID.fromString(this.getUUID()), this);
     }
 
+    // Save into MongoDB
     public void backup() {
         Document profile = new Document("UUID", this.UUID);
         Document find = instance.getProfileCollection().find(profile).first();
