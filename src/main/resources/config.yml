@@ -1,0 +1,4 @@
+mongo-uri: "URI-HERE"
+mongo-database: "database"
+profile-collection: "profiles"
+group-collection: "groups"

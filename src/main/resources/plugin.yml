@@ -1,0 +1,7 @@
+name: PixliesPerms
+version: ${project.version}
+main: net.pixlies.perms.Main
+api-version: 1.16
+authors: [ MickMMars ]
+description: PixliesNet permission management plugin
+website: pixlies.net
