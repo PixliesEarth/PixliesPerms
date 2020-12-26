@@ -3,6 +3,7 @@ package net.pixlies.perms.data;
 import lombok.Getter;
 import net.pixlies.perms.profile.PermissionGroup;
 import net.pixlies.perms.profile.PermissionProfile;
+import org.bukkit.permissions.PermissionAttachment;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,5 +14,7 @@ public class InternalDatabase {
     private final @Getter Map<UUID, PermissionProfile> profiles = new HashMap<>();
 
     private final @Getter Map<String, PermissionGroup> groups = new HashMap<>();
+
+    private final @Getter Map<UUID, PermissionAttachment> attachments = new HashMap<>();
 
 }

@@ -33,6 +33,9 @@ public final class PixliesPerms extends JavaPlugin {
     }
 
     public void init() {
+        // Config
+        this.saveDefaultConfig();
+
         // Load MongoDB stuff
         getLogger().info("Loading mongo-database...");
         String uri = getConfig().getString("mongo-uri");

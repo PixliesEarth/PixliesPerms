@@ -3,6 +3,7 @@ package net.pixlies.perms.profile;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import net.pixlies.perms.PixliesPerms;
+import net.pixlies.perms.interfaces.PixliesPermissible;
 import org.bson.Document;
 
 import java.util.List;
@@ -14,7 +15,7 @@ import java.util.Map;
  */
 @Data
 @AllArgsConstructor
-public class PermissionProfile {
+public class PermissionProfile implements PixliesPermissible {
 
     private static final PixliesPerms instance = PixliesPerms.getInstance();
 
@@ -36,6 +37,12 @@ public class PermissionProfile {
         profile.append("individualPermissions", individualPermissions);
         profile.append("permissionGroups", permissionGroups);
         instance.getProfileCollection().insertOne(profile);
+    }
+
+    @Override
+    public void addPermission(String node, boolean value) {
+        this.individualPermissions.put(node, value);
+        save();
     }
 
 }
